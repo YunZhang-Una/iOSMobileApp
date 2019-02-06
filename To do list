@@ -1,0 +1,31 @@
+//
+//  ViewController.swift
+//  TodoList
+//
+//  Created by Yun Zhang on 1/12/19.
+//  Copyright © 2019 Yun Zhang. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var txtAddItem: UITextField!
+    @IBOutlet weak var txtList: UITextView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    @IBAction func didTapButton(_ sender: Any) {
+        if let text = txtAddItem.text{
+            if text == ""{
+                return
+            }
+            txtList.text.append("\(text)\n")
+            txtAddItem.resignFirstResponder()
+        }
+    }
+    
+}
+
